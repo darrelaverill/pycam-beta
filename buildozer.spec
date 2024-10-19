@@ -18,7 +18,7 @@ requirements = python3, kivy, opencv-python, opencv-python-headless, numpy
 orientation = portrait
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/images/pycamicon.png  # Keep the specified path for the icon
+icon.filename = %(source.dir)s/images/pycamicon.png
 
 # (str) Version of your application
 version = 0.1
@@ -30,4 +30,4 @@ android.permissions = CAMERA, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
 android.minapi = 21
 
 # (str) Presplash image
-presplash.filename = %(source.dir)s/images/pycamicon.png  # Use the same path for presplash
+presplash.filename = %(source.dir)s/images/pycamicon.png
