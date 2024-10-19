@@ -31,3 +31,8 @@ android.minapi = 21
 
 # (str) Presplash image
 presplash.filename = %(source.dir)s/images/pycamicon.png
+
+# Additional [buildozer] section
+[buildozer]
+# (str) Warn on root
+warn_on_root = 1
