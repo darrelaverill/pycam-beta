@@ -7,12 +7,28 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
+
+      # Install required dependencies
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openjdk-11-jdk libtinfo5 zlib1g-dev libncurses5
+
+      # Install Buildozer and other Python requirements
+      - name: Set up Python and install dependencies
+        run: |
+          sudo apt-get install -y python3 python3-pip
+          pip3 install --upgrade pip
+          pip3 install buildozer cython
+
+      # Build the APK
       - name: Build APK
         uses: digreatbrian/buildozer-action@v2
         with:
           buildozer-cmd: buildozer -v android debug
           work-dir: . # directory where your main.py file rests
 
+      # Upload the APK as an artifact
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
